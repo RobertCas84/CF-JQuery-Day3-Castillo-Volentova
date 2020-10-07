@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        li{
+            background-color: lightblue;
+            border: 2px solid black;
+            padding: 2%;
+            max-width: 10%;
+            display: flex;
+            align-items: space-between;
+        }
+        body{
+            background-color: beige;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    
+    <ul>
+        <li>Go to the Supermarket</li>
+        <li>Clean yout appartment</li>
+        <li>cook lunch</li>
+        <li>sleep more</li>
+        <li>wash clothes</li>
+    </ul>
+    <script>
+            $(document).ready(function() {
+                $("li").on("click",function() {
+                    $(this).animate({
+                        opacity: 0.0,
+				        paddingLeft: '+=200'
+                    }, 3000, function() {
+                        $(this).remove();
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
